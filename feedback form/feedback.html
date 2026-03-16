@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Portal | Student Dashboard</title>
+    <link rel="stylesheet" href="feedback1.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="user-profile">
+                <div class="avatar">CW</div>
+                <h3>Chaitanya W.</h3>
+                <p>SE-IT Student</p>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="active">Submit Feedback</a>
+                <a href="#">Recent Activities</a>
+                <a href="#">System Help</a>
+            </nav>
+            <div class="info-card">
+                <h4>Why Feedback?</h4>
+                <p>Your insights help us optimize the IoT and Library modules for better learning.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="progress-bar-top" id="progressBar"></div>
+            
+            <section class="form-section">
+                <header class="content-header">
+                    <h2>System Feedback Portal</h2>
+                    <p>Academic Year 2025-2026</p>
+                </header>
+
+                <form id="advancedForm" oninput="handleProgress()">
+                    <div class="grid-inputs">
+                        <div class="input-box">
+                            <label>Full Name</label>
+                            <input type="text" id="name" placeholder="e.g. Chaitanya Walunjkar" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Email ID</label>
+                            <input type="email" id="email" placeholder="student@college.edu" required>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Experience Rating</label>
+                        <div class="rating-options">
+                            <label class="radio-card">
+                                <input type="radio" name="rate" value="1" required>
+                                <span>😞 Poor</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="rate" value="2">
+                                <span>😐 Avg</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="rate" value="3">
+                                <span>😊 Good</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="rate" value="4">
+                                <span>🔥 Great</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Detailed Comments</label>
+                        <textarea id="msg" rows="4" placeholder="Describe your experience..." onkeyup="count(this)"></textarea>
+                        <span id="charCounter">0 / 250 characters</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </form>
+            </section>
+
+            <section class="history-section">
+                <h3>Submission Guidelines</h3>
+                <div class="guideline-grid">
+                    <div class="g-item">Verify details before submission.</div>
+                    <div class="g-item">Constructive feedback is preferred.</div>
+                    <div class="g-item">Responses are anonymous.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+   
+</body>
+</html>
