@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System | Student Project</title>
+    <link rel="stylesheet" href="lib.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Library<span>Hub</span></div>
+            <div class="nav-links">
+                <a href="#browse-section">Browse</a>
+                <a href="#catalog-section">Inventory</a>
+                <a href="#features">Services</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>College <span>Digital Library</span></h1>
+                <p>A smart system for tracking and borrowing academic resources.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item"><strong>12</strong><p>Total Books</p></div>
+                    <div class="stat-item"><strong>8</strong><p>Available</p></div>
+                </div>
+
+                <div class="search-area">
+                    <input type="text" id="searchInput" placeholder="Search title or author..." onkeyup="searchBooks()">
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="category-section">
+            <div class="category-bar">
+                <button class="cat-btn active" onclick="filterCategory('All')">All Books</button>
+                <button class="cat-btn" onclick="filterCategory('Engineering')">Engineering</button>
+                <button class="cat-btn" onclick="filterCategory('Self-Help')">Self-Help</button>
+                <button class="cat-btn" onclick="filterCategory('Fiction')">Fiction</button>
+            </div>
+        </section>
+
+        <section id="browse-section" class="container">
+            <h2 class="section-header">Recent Arrivals</h2>
+            <div class="book-grid" id="bookGrid"></div>
+        </section>
+
+        <section id="catalog-section" class="container">
+            <h2 class="section-header">Full Library Catalog</h2>
+            <div class="table-wrapper">
+                <table id="catalogTable">
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="borrowModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Borrowing Details</h2>
+            <p id="modalAuthor"></p>
+            <form class="borrow-form" onsubmit="handleBorrow(event)">
+                <label>Full Name:</label>
+                <input type="text" required>
+                <label>Roll Number / Student ID:</label>
+                <input type="text" required>
+                <label>Issue Date:</label>
+                <input type="date" required>
+                <button type="submit" class="confirm-btn">Confirm Issue Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by Chaitanya Walunjkar | Semester IV Project</p>
+    </footer>
+
+    <script src="lib1.js"></script>
+</body>
+</html>
